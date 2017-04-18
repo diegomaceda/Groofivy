@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+    <h1>[wsg]</h1>
+    {% for thread in threads['wsg'] %}
+        <a href="play/wsg/{{ thread['no'] }}"><img src="https://t.4cdn.org/wsg/{{ thread['tim'] }}s.jpg"></a>
+    {% endfor %}
+
+    <h1>[gif]</h1>
+    {% for thread in threads['gif'] %}
+        <a href="play/gif/{{ thread['no'] }}"><img src="https://t.4cdn.org/gif/{{ thread['tim'] }}s.jpg"></a>
+    {% endfor %}
+
+{% endblock %}

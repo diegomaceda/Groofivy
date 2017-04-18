@@ -1,0 +1,58 @@
+body{
+    background-color: transparent;
+}
+
+#black{
+    background-color: black;
+    position: absolute;
+    z-index: -2;
+    height:100%;
+    width:100%;
+}
+
+#header{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#header a{
+    color: white !important;
+}
+
+#header .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#mainvid{
+    height:100%;
+    width:100%;
+    opacity: 0.7;
+    position: absolute;
+    z-index: -1;
+}
+
+#maincontrols{
+    margin: auto 0;
+    bottom:10px;
+    height:100px;
+    width:100%;
+    opacity: 0.9;
+    position: absolute;
+    z-index: 2;
+}
+
+#mainprogress{
+    height:10px;
+    width:100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#progress-inner{
+    background-color: white;
+    height: 100%;
+    width:50%;
+}

@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Play{% endblock %}
+{% block css %}
+    <link href="{{ url_for("static", filename="css/play.css") }}" rel="stylesheet">
+{% endblock %}
+{% block js %}
+    <script src="{{ url_for("static", filename="js/play.js") }}"></script>
+    <script src="{{ url_for("static", filename="js/visualize.js") }}"></script>
+    <script>var posts = {{ posts|safe }};
+    var board = '{{ board }}';
+    var thread = '{{ thread }}';
+    var tname = '{{ tname }}';</script>
+
+{% endblock %}
+
+{% block content %}
+    {% raw %}
+    <!--{{ filename + "hi"}}-->
+
+    <div id="black" v-bind:test="tim">
+
+    </div>
+    <video id="mainvid" autoplay>
+        <source v-bind:src="VideoURL">
+    </video>
+
+
+    <div class="container-fluid" id="maincontrols">
+        <div class="row" style="">
+            <div class="col-xs-3" style="text-align: left;">
+                <i class="fa fa-angle-left fa-4x" onclick="prevVideo();" style="cursor: pointer;"></i>
+            </div>
+            <div class="col-xs-3">
+                <i v-if="paused" class="fa fa-play fa-4x" onclick="toggleVideo();" style="cursor: pointer;"></i>
+                <i v-if="!paused" class="fa fa-pause fa-4x" onclick="toggleVideo();" style="cursor: pointer;"></i>
+            </div>
+            <div class="col-xs-3" style="text-align: right">
+                <i v-if="looped" class="fa fa-arrow-right fa-4x" onclick="toggleRepeat();" style="cursor: pointer;"></i>
+                <i v-if="!looped" class="fa fa-repeat fa-4x" onclick="toggleRepeat();" style="cursor: pointer;"></i>
+            </div>
+            <div class="col-xs-3" style="text-align: right;">
+                <i class="fa fa-angle-right fa-4x" onclick="nextVideo();" style="cursor: pointer;"></i>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="mainprogress">
+        <div id="progress-inner" v-bind:style="'width:'+PercentageComplete+'%'"></div>
+    </div>
+
+
+    <nav class="navbar" id="header">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand"><a href="/"><b>[Groovify]</b></a>
+                    <small> / <a v-bind:href="BoardURL">{{ board }}</a>
+                        / <a v-bind:href="ThreadURL">{{ tname }}</a>
+                        / <a v-bind:href="PostURL">{{ filename }}</a></small>
+                </span>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Download
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a v-bind:href="MP3URL" download>as MP3</a></li>
+                            <li><a v-bind:href="VideoURL" download>as WebM</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    {% endraw %}
+
+{% endblock %}

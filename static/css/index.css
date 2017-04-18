@@ -1,0 +1,258 @@
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/*Basic*/
+
+@-ms-viewport {
+    width: device-width;
+}
+
+body {
+    background: #000000;
+}
+
+body.is-loading *, body.is-loading *:before, body.is-loading *:after {
+    -moz-animation: none !important;
+    -webkit-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important;
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important;
+}
+
+body, input, select, textarea {
+    color: #ffffff;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 16pt;
+    font-weight: 200;
+    letter-spacing: 0.075em;
+    line-height: 1.65em;
+
+}
+
+@media screen and (max-width: 1680px) {
+
+    body, input, select, textarea {
+        font-size: 13pt;
+    }
+
+}
+
+@media screen and (max-width: 1280px) {
+
+    body, input, select, textarea {
+        font-size: 12pt;
+    }
+
+}
+
+@media screen and (max-width: 736px) {
+
+    body, input, select, textarea {
+        font-size: 11pt;
+        letter-spacing: 0.0375em;
+    }
+
+}
+
+a {
+    -moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+    -webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+    -ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+    transition: color 0.2s ease, border-bottom-color 0.2s ease;
+    border-bottom: dotted 1px;
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    border-bottom-color: transparent;
+}
+
+strong, b {
+    color: #ffffff;
+    font-size: 40pt;
+}
+
+em, i {
+    font-style: italic;
+}
+
+p {
+    font-size: 0.75em;
+    margin: 0 0 2em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-weight: 400;
+    letter-spacing: 0.225em;
+    line-height: 1em;
+    margin: 0 0 1em 0;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1 {
+    line-height: 750px;
+    font-size: 48pt;
+    text-align: center;
+    letter-spacing: 8px;
+}
+
+h2 {
+    font-size: 1.75em;
+    line-height: 1em;
+}
+
+@media screen and (max-width: 736px) {
+
+    h2 {
+        font-size: 1.1em;
+        line-height: 1.65em;
+    }
+
+}
+
+h3 {
+    font-size: 1.25em;
+    line-height: 1.75em;
+}
+
+@media screen and (max-width: 736px) {
+
+    h3 {
+        font-size: 1em;
+        line-height: 1.65em;
+    }
+
+}
+
+h4 {
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
+h5 {
+    font-size: 0.8em;
+    line-height: 1.5em;
+}
+
+h6 {
+    font-size: 0.7em;
+    line-height: 1.5em;
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.background-image {
+    background: url('/Users/diegomaceda/Desktop/groovify/assets/images/5.gif') no-repeat center center fixed;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    opacity: 0;
+
+    -webkit-animation-name: fade-in;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 4s;
+}
+
+.background-image.visible {
+    opacity: 1;
+}
+
+.logo {
+
+    position: absolute;
+    top: 16px;
+    left: 16px;
+
+    opacity: 0;
+
+    -webkit-animation-name: fade-in;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 4s;
+}
+
+.logo.visible {
+    opacity: 1;
+}
+
+/*Scrollable menu*/
+.itemconfiguration {
+    height: calc(100%);
+    width: 400px;
+    background-color: rgba(46, 46, 46, 0.77);
+    overflow-y: auto;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    opacity: 0;
+
+    -webkit-animation-name: fade-in;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 4s;
+
+}
+
+.itemconfiguration.visible {
+    opacity: 1;
+}
+
+.right_contentlist {
+    width: 600px;
+    padding: 0 0 0 5px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    /* background-image:url(images/bubble.png); */
+    /* background-color: black; */
+    opacity: 0;
+
+    -webkit-animation-name: fade-in;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-delay: 4s;
+
+}
+
+.right_contentlist.visible {
+    opacity: 1;
+}
